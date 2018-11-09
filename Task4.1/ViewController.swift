@@ -35,6 +35,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // create button and add it to the view
         let button = UIButton.createButton()
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         view.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         let buttonLeadingConstraint = NSLayoutConstraint(item: button, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 20)
@@ -58,6 +59,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let labelTopConstraint = NSLayoutConstraint(item: label, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 20)
         NSLayoutConstraint.activate([labelLeadingConstraint, labelTrailingConstraint, labelTopConstraint])
         return view
+    }
+    
+    @objc func buttonAction(_ sender: UIButton!) {
+        sender.superview?.removeFromSuperview()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
