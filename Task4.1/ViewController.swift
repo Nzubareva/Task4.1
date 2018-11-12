@@ -13,12 +13,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var viewsInput: UITextField!
     @IBOutlet weak var stackView: UIStackView!
     
-    let labelValues = ["Первый блок", "Второй блок", "Третий блок"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         viewsInput.delegate = self
+        view.backgroundColor = .black
     }
     
     func createView(_ labelText: String) -> UIView {
@@ -41,6 +40,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let buttonLeadingConstraint = NSLayoutConstraint(item: button, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 20)
         let buttonTrailingConstraint = NSLayoutConstraint(item: button, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -20)
         let buttonTopConstraint = NSLayoutConstraint(item: button, attribute: .top, relatedBy: .equal, toItem: label, attribute: .bottom, multiplier: 1, constant: 20)
+        
+        view.bottomAnchor.constraint(equalTo: button.bottomAnchor, constant: 20).isActive = true
         
         // activate constraints
         NSLayoutConstraint.activate([labelLeadingConstraint, labelTrailingConstraint, labelTopConstraint, buttonLeadingConstraint, buttonTrailingConstraint, buttonTopConstraint])
@@ -73,13 +74,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             stackView.addArrangedSubview(createErrorView("Введено нечисловое значение"))
             return true
         }
-        if amount < 1 || amount > 3 {
-            stackView.addArrangedSubview(createErrorView("Не в диапазоне 1..3"))
+        if amount < 1 || amount > 100 {
+            stackView.addArrangedSubview(createErrorView("Не в диапазоне 1..100"))
             return true
         }
         
         for i in 0..<amount {
-            stackView.addArrangedSubview(createView(labelValues[i]))
+            stackView.addArrangedSubview(createView("Блок № \(i+1)"))
         }
         
         return true

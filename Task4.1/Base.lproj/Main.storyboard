@@ -26,18 +26,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="T5x-ca-bhb">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
-                            </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qg7-Wt-yo6">
+                                <rect key="frame" x="0.0" y="59" width="375" height="608"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="T5x-ca-bhb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="608"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="T5x-ca-bhb" firstAttribute="top" secondItem="qg7-Wt-yo6" secondAttribute="top" id="1sl-So-HB6"/>
+                                    <constraint firstAttribute="bottom" secondItem="T5x-ca-bhb" secondAttribute="bottom" id="JdS-cz-cpZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="T5x-ca-bhb" secondAttribute="trailing" id="RAH-mo-X73"/>
+                                    <constraint firstItem="T5x-ca-bhb" firstAttribute="leading" secondItem="qg7-Wt-yo6" secondAttribute="leading" id="YYm-re-bL4"/>
+                                    <constraint firstItem="T5x-ca-bhb" firstAttribute="width" secondItem="qg7-Wt-yo6" secondAttribute="width" id="qPv-BP-PYC"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="T5x-ca-bhb" firstAttribute="top" secondItem="IyE-J0-ntX" secondAttribute="bottom" constant="10" id="52u-3X-MFM"/>
-                            <constraint firstItem="T5x-ca-bhb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6B1-w6-tL6"/>
-                            <constraint firstItem="T5x-ca-bhb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7WM-If-MA8"/>
+                            <constraint firstItem="qg7-Wt-yo6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3gm-Ui-RfI"/>
                             <constraint firstItem="IyE-J0-ntX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Nxm-bA-RXB"/>
                             <constraint firstItem="IyE-J0-ntX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pn4-lk-ecz"/>
-                            <constraint firstItem="T5x-ca-bhb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jh4-Kw-SoW"/>
+                            <constraint firstItem="qg7-Wt-yo6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jBF-XF-MOj"/>
+                            <constraint firstItem="qg7-Wt-yo6" firstAttribute="top" secondItem="IyE-J0-ntX" secondAttribute="bottom" constant="20" id="kUh-8B-v0j"/>
+                            <constraint firstItem="qg7-Wt-yo6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="w3o-BU-2OV"/>
                             <constraint firstItem="IyE-J0-ntX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xQD-xC-kih"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
